@@ -3,3 +3,7 @@ Manifest.txt
 project-euler.jar
 lib
 classes
+*.class
+*.out
+*.a
+*.pyc

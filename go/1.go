@@ -16,6 +16,6 @@ func multiple(limit int) (result int) {
 }
 
 func main() {
-	r := multiple(Limit)
+	r := multiple(Default)
 	fmt.Println("The result is: ", r)
 }
