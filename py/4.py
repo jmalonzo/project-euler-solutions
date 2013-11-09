@@ -2,7 +2,6 @@
 
 import sys
 
-
 def palindrome(s_num):
     length = len(s_num)
     for x in range(length / 2):

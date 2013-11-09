@@ -1,3 +1,4 @@
+
 package main
 
 import (
@@ -28,6 +29,5 @@ func main() {
 			}
 		}
 	}
-
 	fmt.Println("The largest palindrome made from the product of two 3-digit numbers is", lp)
 }
