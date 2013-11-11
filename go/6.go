@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -17,7 +16,7 @@ func sumOfTheSquares(x int64) int64 {
 
 func squaresOfTheSum(x int64) int64 {
 	var r int64 = 0
-	var i int64;
+	var i int64
 	for i = 1; i <= x; i++ {
 		r += i
 	}
@@ -26,7 +25,7 @@ func squaresOfTheSum(x int64) int64 {
 
 func main() {
 	var (
-		num int64 = 100
+		num    int64 = 100
 		result int64 = squaresOfTheSum(num) - sumOfTheSquares(num)
 	)
 

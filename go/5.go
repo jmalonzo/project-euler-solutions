@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -6,7 +5,7 @@ import (
 	"math"
 )
 
-const MaxInt = int(^uint(0) >> 1) 
+const MaxInt = int(^uint(0) >> 1)
 
 func main() {
 	divisible := false
@@ -20,7 +19,7 @@ func main() {
 		}
 		if divisible == true {
 			answer = i
- 			break
+			break
 		}
 	}
 	fmt.Println("Smallest number divisible by numbers 1..20 is", answer)

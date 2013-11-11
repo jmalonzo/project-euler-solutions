@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -9,7 +8,7 @@ const Default = 1000
 
 func multiple(limit int) (result int) {
 	for i := 0; i < limit; i++ {
-		if i % 3 == 0 || i % 5 == 0  {
+		if i%3 == 0 || i%5 == 0 {
 			result += i
 		}
 	}

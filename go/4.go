@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -9,8 +8,8 @@ import (
 func palindrome(num int) int {
 	s := strconv.Itoa(num)
 	l := len(s)
-	for i := 0; i < l / 2; i += 1 {
-		if s[i] != s[l - i - 1] {
+	for i := 0; i < l/2; i += 1 {
+		if s[i] != s[l-i-1] {
 			return 0
 		}
 	}
