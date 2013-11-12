@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -7,7 +6,6 @@ import (
 )
 
 func isPrime(x *big.Int) bool {
-	// FIXME implement primality test here. No cheating :-)
 	return x.ProbablyPrime(10) == true
 }
 
