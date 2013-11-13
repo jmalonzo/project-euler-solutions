@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"math"
+	"testing"
 )
 
 func sumOfTheSquares(x int64) int64 {
@@ -23,11 +23,18 @@ func squaresOfTheSum(x int64) int64 {
 	return int64(math.Pow(float64(r), float64(2)))
 }
 
-func main() {
+func sumSquareDifference() int64 {
 	var (
 		num    int64 = 100
 		result int64 = squaresOfTheSum(num) - sumOfTheSquares(num)
 	)
+	return result
+}
 
-	fmt.Println("The difference is", result)
+func TestSumSquareDifference(t *testing.T) {
+	var answer int64 = 25164150
+	x := sumSquareDifference()
+	if x != answer {
+		t.Errorf("result = %v, want %v", x, answer)
+	}
 }

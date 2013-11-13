@@ -1,13 +1,13 @@
 package main
 
 import (
-	"fmt"
 	"math"
+	"testing"
 )
 
 const MaxInt = int(^uint(0) >> 1)
 
-func main() {
+func smallestMultiple() int {
 	divisible := false
 	answer := 0
 	for i := 20; i < MaxInt; i++ {
@@ -22,5 +22,14 @@ func main() {
 			break
 		}
 	}
-	fmt.Println("Smallest number divisible by numbers 1..20 is", answer)
+	return answer
 }
+
+func TestSmallestMultiple(t *testing.T) {
+	x := smallestMultiple()
+	answer := 232792560
+	if x != answer {
+		t.Errorf("result = %v, want %v", x, answer)
+	}
+}
+

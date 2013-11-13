@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
+	"testing"
 )
 
 func palindrome(num int) int {
@@ -16,7 +16,7 @@ func palindrome(num int) int {
 	return num
 }
 
-func main() {
+func largestPalindrome() int {
 	start, end := 999, 99
 	lp, num, p := 0, 0, 0
 	for i := start; i > end; i = i - 1 {
@@ -28,5 +28,13 @@ func main() {
 			}
 		}
 	}
-	fmt.Println("The largest palindrome made from the product of two 3-digit numbers is", lp)
+	return lp
+}
+
+func TestLargestPalindrome(t *testing.T) {
+	x := largestPalindrome()
+	answer := 906609
+	if x != answer {
+		t.Errorf("result = %v, want %v", x, answer)
+	}
 }

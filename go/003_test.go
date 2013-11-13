@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"math"
+	"testing"
 )
 
-func main() {
-	number := 600851475143
+func largestPrimeFactor(number int) int {
 	lpf := 0
 	nsqrt := int(math.Sqrt(float64(number)))
 	sieve := make([]bool, nsqrt+1)
@@ -34,5 +33,14 @@ func main() {
 			break
 		}
 	}
-	fmt.Println("The largest prime factor of", number, "is", lpf)
+
+	return lpf
+}
+
+func TestGetLargestPrimeFactor(t *testing.T) {
+	x := largestPrimeFactor(600851475143)
+	answer := 6857
+	if x != answer {
+		t.Errorf("result = %v, want %v", x, answer)
+	}
 }

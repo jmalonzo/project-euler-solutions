@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+import "testing"
 
 func fibo(terms []int, limit int) []int {
 	length := len(terms)
@@ -11,12 +11,20 @@ func fibo(terms []int, limit int) []int {
 	return fibo(append(terms, r), limit)
 }
 
-func main() {
+func runFibo() int {
 	sum := 0
 	for _, value := range fibo([]int{1, 2}, 4000000) {
 		if value%2 == 0 {
 			sum += value
 		}
 	}
-	fmt.Println("The sum of the even terms of a fibo sequence under 4M is", sum)
+	return sum
+}
+
+func TestFibo(t *testing.T) {
+	x := runFibo()
+	answer := 4613732
+	if x != answer {
+		t.Errorf("result = %v, want %v", x, answer)
+	}
 }
