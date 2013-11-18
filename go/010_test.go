@@ -19,7 +19,6 @@ func sumOfPrimesBelow(x int) int {
 		for j:=2*i; j<x; j+=i {
 			sieve[j] = false
 		}
-		
 	}
 
 	sum := 0
