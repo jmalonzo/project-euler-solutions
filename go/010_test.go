@@ -39,3 +39,9 @@ func TestSumOfPrimesBelow2M(t *testing.T) {
 	}
 	
 }
+
+func BenchmarkSumOfPrimesBelow2M(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		sumOfPrimesBelow(2000000)
+	}
+}
