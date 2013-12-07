@@ -5,24 +5,42 @@ import (
 	"testing"
 )
 
-const MaxInt = int(^uint(0) >> 1)
+// From mathblog.dk/project-euler-problem-5
+func generatePrimes(limit int) []int {
+	var primes []int
+	var j int
+	isPrime := false
 
-func smallestMultiple() int {
-	divisible := false
-	answer := 0
-	for i := 20; i < MaxInt; i++ {
-		for j := 1; j <= 20; j++ {
-			divisible = math.Remainder(float64(i), float64(j)) == float64(0)
-			if divisible == false {
+	primes = append(primes, 2)
+
+	for i := 3; i <= limit; i += 2 {
+		j = 0
+		isPrime = true
+		for primes[j]*primes[j] <= i {
+			if i%primes[j] == 0 {
+				isPrime = false
 				break
 			}
+			j++
 		}
-		if divisible == true {
-			answer = i
-			break
+		if isPrime {
+			primes = append(primes, i)
 		}
 	}
-	return answer
+
+	return primes
+}
+
+func smallestMultiple() int {
+	divisorMax := 20
+	var primes []int = generatePrimes(divisorMax)
+	result := 1
+
+	for i := 0; i < len(primes); i++ {
+		a := math.Floor(math.Log(float64(divisorMax)) / math.Log(float64(primes[i])))
+		result = result * int(math.Pow(float64(primes[i]), a))
+	}
+	return result
 }
 
 func TestSmallestMultiple(t *testing.T) {
@@ -32,4 +50,3 @@ func TestSmallestMultiple(t *testing.T) {
 		t.Errorf("result = %v, want %v", x, answer)
 	}
 }
-
