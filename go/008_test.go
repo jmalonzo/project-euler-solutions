@@ -22,10 +22,10 @@ func largestProduct() int {
 		y, _ := strconv.Atoi(fmt.Sprintf("%c", num[idx+4]))
 		result = int(math.Max(float64(result), float64(u*v*w*x*y)))
 	}
-	return result 
+	return result
 }
 
-func TestLargestProduct (t *testing.T) {
+func TestLargestProduct(t *testing.T) {
 	x := largestProduct()
 	answer := 40824
 	if x != answer {

@@ -20,7 +20,7 @@ func largestPrimeFactor(number int) int {
 		if sieve[i] == false {
 			continue
 		}
-		for j:=2*i; j<nsqrt; j+=i {
+		for j := 2 * i; j < nsqrt; j += i {
 			sieve[j] = false
 		}
 	}
